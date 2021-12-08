@@ -6,7 +6,7 @@ export const StoreProvider = ({ children }) => {
   const [balance, setBalance] = useState(0);
   const [historyList, setHistoryList] = useState([]);
   const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState(null);
+  const [amount, setAmount] = useState("");
   const [isShowTitleAlert, setIsShowTitleAlert] = useState(false);
   const [isShowAmountAlert, setIsShowAmountAlert] = useState(false);
   const [totalIncome, setTotalIncome] = useState(0);

@@ -3,26 +3,34 @@ import { useStore } from "./context";
 
 function History() {
   const { historyList } = useStore();
+
   return (
-    <section className="history-container">
-      <h2>History</h2>
-      <div className="underline"></div>
-      {
-        // historyList.map()
-      }
-      <div className="history-box">
-        <p>Cash</p>
-        <p>+500</p>
+    <>
+      <div className="history-header">
+        <h2>History</h2>
+        <div className="underline"></div>
       </div>
-      <div className="history-box">
-        <p>Book</p>
-        <p>-40</p>
-      </div>
-      <div className="history-box">
-        <p>Camera</p>
-        <p>-200</p>
-      </div>
-    </section>
+      <section
+        className={`history-container ${
+          historyList.length < 1 && "history-container-clear"
+        }`}
+      >
+        {historyList.map((value) => {
+          const { title, amount, id, type } = value;
+          return (
+            <div
+              key={id}
+              className={`history-box ${
+                type === "negative" && "history-box-red"
+              }`}
+            >
+              <p>{title}</p>
+              <p>{amount}</p>
+            </div>
+          );
+        })}
+      </section>
+    </>
   );
 }
 
