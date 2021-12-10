@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import { useStore } from "./context";
 
 const InEx = () => {
   const { totalIncome, totalExpenses } = useStore();
+
+  useEffect(() => {
+    localStorage.setItem("totalIncome", JSON.stringify(totalIncome));
+  }, [totalIncome]);
+
+  useEffect(() => {
+    localStorage.setItem("totalExpenses", JSON.stringify(totalExpenses));
+  }, [totalExpenses]);
+
   return (
     <section className="ie-container">
       <div className="income-box">

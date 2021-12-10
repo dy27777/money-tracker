@@ -5,6 +5,7 @@ import AddNew from "./AddNew";
 
 function App() {
   const { balance } = useStore();
+
   return (
     <div className="app">
       <section className="app-header">
