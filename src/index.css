@@ -20,6 +20,17 @@ body {
   margin: auto;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .app-header {
   margin-bottom: 2rem;
   font-size: 0.9rem;
